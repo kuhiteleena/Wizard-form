@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multistep-Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <!-- make empty div and get output from api -->
+                  <div id="api-output"></div>
+   
+    <form action="submit.php" method="post" class="main mt-5 d-flex justify-content-center align-items-center">
+    <!-- form1 -->
+     <section class="basic step active" id="form1">
+     <div class="auth-card">
+     <!-- left -->
+      <div class="auth-left">
+        <h4 class="welcome d-flex justify-content-center">WELCOME</h4>
+        <p class="tagline text-center">
+          Hello!<br />
+          We are glad to see you :)
+        </p>
+      </div>
+        <!-- right -->
+        <div class="auth-right">
+        <h3>Create Account</h3>
+        <!-- <form id="Step1" class="step" method="post"> -->
+        <div class="row">
+            <div class="col-md-6">
+            <input type="text" class="form-control" name="fname" placeholder="First Name" title="First Name"  pattern="[A-Za-z\s]+" required>
+             </div>
+
+             <div class="col-md-6 ">
+             <input type="text" class="form-control" name="lname" placeholder="Last Name" title="Last Name"  pattern="[A-Za-z\s]+" required>
+             </div>
+        </div>
+        <input type="email"class="form-control"name="email"placeholder="email@gmail.com"  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address" required oninvalid="this.setCustomValidity('Enter a valid email address')" oninput="this.setCustomValidity('')">
+        <input type="password" class="form-control"name="password"placeholder="Password"required minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$" title="Password must be at least 8 characters, include uppercase, lowercase, number, and special character">
+        <input type="password" class="form-control"  name="confirmpassword"  placeholder="Repeat Password" title="Re-Enter Password" required  oninput="this.setCustomValidity( this.value !== document.querySelector('[name=password]').value? 'Passwords do not match': '')">
+         <button type="button" class="btn first-btn btn-block prev-btn" name="step1"  onclick="nextStep()">Next</button>
+        <!-- </form> -->
+        </div>
+        </div>
+        </section>
+
+         <!-- form 2 -->
+            <section class="basic step" id="form2">
+            <div class="auth-right right-full ">
+            <h3>Personal Details</h3>
+            <!-- <form id="Step2" class="step" method="post"> -->
+            <input type="text" class="form-control" name="address" placeholder="Address" minlength="5" title="Enter Address" required>
+            <input type="text" class="form-control" name="city" placeholder="City"  pattern="[A-Za-z\s]+" title="City name should contain letters only" required>
+            <input type="text" class="form-control" name="state" placeholder="State/Province/Region" pattern="[A-Za-z\s]+" title="State should contain letters only" required>
+            <input type="text" class="form-control" name="zip_code" placeholder="ZIP Code/Postal Code" pattern="[A-Za-z0-9\s-]{3,10}" title="Enter a valid ZIP or postal code" required>
+             <button type="button" class="btn first-btn btn-block prev-btn" name="step1"  onclick="prevStep()">Previous</button>
+            <button type="button" class="btn btn-primary btn-block mt-3 first-btn next-btn" onclick="nextStep()">Next</button>
+            <!-- </form> -->
+            </div>
+            </section>
+            <!-- form 3 -->
+            <section class="basic step" id="form3">
+            <div class="auth-right right-full">
+                 <h3>Payement Details</h3>
+                    <!-- <form id="Step3" class="step" method="post"> -->
+                        <div class="cards-accepted  ">
+                          <h4 class="text-white opacity-75">Cards Accepted :</h4>
+                          <div class="card-icons mb-1">
+                           <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                           <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard">
+                           <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+                          </div>
+                        </div>
+                    <input type="text" inputmode="numeric" pattern="[0-9]*" class="form-control" name="card_number" placeholder="Card Number" required>
+                    <input type="text" class="form-control" name="card_name" placeholder="Name on Card" required>
+                    <div class="row">
+                        <div class="col-md-6">
+                        <input type="date" class="form-control d" name="expiry_date" placeholder="Expiry Date" required>
+                        </div>
+                        <div class="col-md-6 ">
+                        <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" class="form-control" name="cvv" placeholder="CVV" required>
+                        </div>
+                    </div>
+                     <button type="button" class="btn first-btn btn-block prev-btn" name="step1"  onclick="prevStep()">Previous</button>
+                    <button type="submit" class="btn btn-primary btn-block mt-3 first-btn submit-btn">Submit</button>
+                    <!-- </form> -->
+
+                 
+
+            </div>
+            </section>
+    </form>
+            <script src="style.js"></script>
+  </body>
+</html>

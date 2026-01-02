@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+body {
+  background: linear-gradient(135deg, #dff5ee, #eafaf6);
+}
+.basic ,.main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-card{
+  width: 900px;
+  max-width: 95%;
+  height: 520px;
+  display: flex;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+}
+.auth-left {
+  width: 45%;
+  background: linear-gradient(180deg, #6fcf97, #2f8f7a);
+  color: #ffffff;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.welcome{
+    letter-spacing: 2px;
+  font-size: 35px;
+  opacity: 0.85;
+}
+.tagline {
+  font-size: 22px;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+.auth-right {
+  width: 55%;
+  background: #1f7f6d;
+  padding: 60px 50px;
+  color: #ffffff;
+}
+.auth-right h3 {
+  margin-bottom: 25px;
+  text-align: center;
+}
+.auth-right .form-control {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 25px;
+  padding: 12px 18px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.auth-right .form-control::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.auth-right .form-control:focus {
+  border-color: #9ff0c8;
+  box-shadow: none;
+}
+.first-btn {
+  width: 100%;
+  background: #9ff0c8;
+  border-radius: 25px;
+  padding: 12px;
+  border: none;
+  font-weight: 600;
+  color: #1f7f6d;
+}
+.first-btn:hover {
+  background: #baf5d6;
+  color: #032920;
+}
+
+@media (max-width: 768px) {
+  .auth-card {
+    flex-direction: column;
+    height: auto;
+  }
+  .auth-card, .right-full {
+    height: auto;
+  }
+
+  .auth-left,
+  .auth-right {
+    width: 100%;
+  }
+}
+
+.right-full{
+ width: 900px;
+  max-width: 95%;
+  height: 520px;
+  border-radius: 30px;   
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+    
+}
+
+.cards-title {
+  font-size: 16px; 
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.card-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.card-icons img {
+  height: 28px;   
+  width: auto;
+  background: #ffffff;
+  padding: 4px 6px;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+
+
+input[type="date"].form-control {
+  background-color: #1f7f6b;
+  color:  rgba(255,255,255,0.7);
+  border: 1px solid #5cc2a8;
+  border-radius: 25px;
+  padding: 12px 16px;
+}
+
+input[type="date"] {
+  color-scheme: dark; 
+}
+
+/* On focus */
+input[type="date"]:focus {
+  outline: none;
+  border-color: #7be0c4;
+  box-shadow: 0 0 0 2px rgba(123, 224, 196, 0.3);
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
